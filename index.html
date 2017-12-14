@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Proposals DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body class="container">
+  <form>
+    <div class="form-group">
+      <label for="file">Compiled Code:</label>
+      <input type="file" id="file" name="files[]" multiple />
+    </div>
+    <a href='#' onclick="read_code()" class="btn btn-default">Read Code</a>
+  </form>
+  <br>
+  <form>
+    <div class="form-group">
+      <label for="account">Active Account:</label>
+      <select class="form-control" id="account" onchange="set_account()">
+        <option>Account 1</option>
+        <option>Account 2</option>
+        <option>Account 3</option>
+        <option>Account 4</option>
+        <option>Account 5</option>
+        <option>Account 6</option>
+        <option>Account 7</option>
+        <option>Account 8</option>
+        <option>Account 9</option>
+        <option>Account 10</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="balance">Balance:</label>
+      <div class="col-sm-10">
+        <p class="form-control-static" id="balance"></p>
+      </div>
+    </div>
+  </form>
+
+  <br>
+
+  <h1>Current Proposals:</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered" id="proposals">
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>Betting Time</th>
+          <th>Reveal Time</th>
+          <th>Place Bet</th>
+          <th>Reveal</th>
+          <th>Result</th>
+          <th>Withdraw</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <a href="#" class="btn btn-default" onclick="update_proposals()">update</a>
+  </div>
+  <br>
+  <h1>New Proposal:</h1>
+  <form>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" value="Proposal 1">
+    </div>
+    <div class="form-group">
+      <label for="url">URL:</label>
+      <input type="text" class="form-control" id="url" value="www.example.com">
+    </div>
+    <div class="form-group">
+      <label for="betting_time">Betting Time:</label>
+      <input type="number" class="form-control" id="betting_time" value=15>
+    </div>
+    <div class="form-group">
+      <label for="reveal_time">Reveal Time:</label>
+      <input type="number" class="form-control" id="reveal_time" value=15>
+    </div>
+    <a href="#" class="btn btn-default" onclick="new_proposal()">New Proposal</a>
+  </form>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="./index.js"></script>
+</html>
